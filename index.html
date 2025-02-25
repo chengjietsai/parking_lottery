@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽籤系統</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>抽籤系統</h2>
+    <form id="lotteryForm">
+        <label for="address">門牌號：</label>
+        <input type="text" id="address" required>
+
+        <label for="floor">樓層：</label>
+        <input type="text" id="floor" required>
+
+        <label for="firstChoice">第一志願：</label>
+        <select id="firstChoice" onchange="updateChoices()">
+            <option value="">請選擇</option>
+            <option value="甲">甲</option>
+            <option value="乙">乙</option>
+            <option value="丙">丙</option>
+        </select>
+
+        <label for="secondChoice">第二志願：</label>
+        <select id="secondChoice">
+            <option value="">請選擇</option>
+            <option value="甲">甲</option>
+            <option value="乙">乙</option>
+            <option value="丙">丙</option>
+        </select>
+
+        <button type="submit">提交</button>
+    </form>
+
+    <div>
+        <h3>設定名額</h3>
+        甲名額: <input class="quota" type="number" id="quotaA" value="5">
+        乙名額: <input class="quota" type="number" id="quotaB" value="5">
+        丙名額: <input class="quota" type="number" id="quotaC" value="5">
+    </div>
+
+    <button onclick="checkDuplicates()">檢查重複</button>
+    <button onclick="drawLottery()">抽籤</button>
+
+    <h3>抽籤結果</h3>
+    <div class="result-container">
+        <div class="result-box">
+            <h3>甲</h3>
+            <div class="result-list" id="resultA"></div>
+        </div>
+        <div class="result-box">
+            <h3>乙</h3>
+            <div class="result-list" id="resultB"></div>
+        </div>
+        <div class="result-box">
+            <h3>丙</h3>
+            <div class="result-list" id="resultC"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
