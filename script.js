@@ -3,7 +3,7 @@ const GAS_URL = "https://script.google.com/macros/s/AKfycbzbbdHuW0L6k4Rf4af63s5k
 
 // 更新第二志願選項
 function updateChoices() {
-    const first = document.getElementById("firstChoice").value;
+    const first = document.getElementById("firstChoice").valua;
     const secondChoice = document.getElementById("secondChoice");
     secondChoice.innerHTML = "<option value=''>請選擇</option>";
     ["甲", "乙", "丙"].forEach(option => {
