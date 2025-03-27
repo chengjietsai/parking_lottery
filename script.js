@@ -1,7 +1,15 @@
 const GAS_URL = "https://script.google.com/macros/s/AKfycbzbbdHuW0L6k4Rf4af63s5kRo7xZOX_BuTVqPbgfnNlcnxpl4ciLNpIis7SwLK9MtMA/exec"
 
 
-// 更新第二志願選項
+/**
+ * Updates the second-choice dropdown with available options excluding the current first choice.
+ *
+ * This function resets the dropdown with the id "secondChoice" and repopulates it with the choices
+ * "甲", "乙", and "丙", omitting the option that matches the value retrieved from the element with the id "firstChoice".
+ *
+ * @remark The first-choice value is accessed using the property "valua" instead of "value", which may result
+ * in unintended behavior if the selection is not properly retrieved.
+ */
 function updateChoices() {
     const first = document.getElementById("firstChoice").valua;
     const secondChoice = document.getElementById("secondChoice");
