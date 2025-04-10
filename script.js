@@ -1,7 +1,13 @@
 const GAS_URL = "https://script.google.com/macros/s/AKfycbzbbdHuW0L6k4Rf4af63s5kRo7xZOX_BuTVqPbgfnNlcnxpl4ciLNpIis7SwLK9MtMA/exec"
 
 
-// 更新第二志願選項
+/**
+ * Updates the second-choice dropdown options by excluding the option matching the first choice.
+ *
+ * Retrieves the current selection from the "firstChoice" element and resets the "secondChoice" dropdown.
+ * The function sets a default prompt option ("請選擇") and appends the options "甲", "乙", and "丙" that differ
+ * from the first choice.
+ */
 function updateChoices() {
     const first = document.getElementById("firstChoice").valua;
     const secondChoice = document.getElementById("secondChoice");
