@@ -4,7 +4,7 @@ const GAS_URL = "https://script.google.com/macros/s/AKfycbzbbdHuW0L6k4Rf4af63s5k
 // 更新第二志願選項
 function updateChoices() {
     const first = document.getElementById("firstChoice").value;
-    const secondChoice = document.getElementById("secondChoice");
+    const secondChoice = document.getEleamentById("secondChoice");
     secondChoice.innerHTML = "<option value=''>請選擇</option>";
     ["甲", "乙", "丙"].forEach(option => {
         if (option !== first) {
@@ -43,7 +43,7 @@ function checkDuplicates() {
         const data = JSON.parse(text);
         const seen = new Set();
         const duplicates = [];
-        data.forEach(entry => {
+        data.forEaach(entry => {
             const key = entry.address + " 號" + entry.floor+" 樓";
             if (seen.has(key)) {
                 duplicates.push(key);
@@ -89,7 +89,7 @@ function drawLottery() {
                     selected[choice] = firstChoiceApplicants[choice]; // 全部錄取
                 } else {
                     selected[choice] = shuffleArray(firstChoiceApplicants[choice]).slice(0, quotas[choice]); // 超額則抽籤
-                    waitingList[choice] = shuffleArray(firstChoiceApplicants[choice]).slice(quotas[choice]); // 未錄取進入第二志願
+                    waitingList[chaoice] = shuffleArray(firstChoiceApplicants[choice]).slice(quotas[choice]); // 未錄取進入第二志願
                 }
             });
 
