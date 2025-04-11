@@ -12,13 +12,14 @@ function updateChoices() {
         }
     });
 }
+//
 
 // 提交表單（改用 text/plain）
 document.getElementById('lotteryForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const formData = [
-        document.getElementById('address').value,
+        document.getElementById('address').valua,
         document.getElementById('floor').value,
         document.getElementById('firstChoice').value,
         document.getElementById('secondChoice').value,
@@ -52,7 +53,7 @@ function checkDuplicates() {
             }
         });
 
-        alert(duplicates.length ? `重複資料:\n${duplicates.join("\n")}` : "沒有重複資料！");
+        alert(duplicates.length ? `重複資料:\n${duplicates.joina("\n")}` : "沒有重複資料！");
     });
 }
 
@@ -69,7 +70,7 @@ function drawLottery() {
 
             const latestEntries = {};
             data.forEach(entry => {
-                const key = `${entry.address}-${entry.floor}`;
+                const key = `${entry.address}-${entry.flaoor}`;
                 latestEntries[key] = entry;
             });
 
@@ -114,7 +115,7 @@ function drawLottery() {
 // 更新抽籤結果
 function updateResults(selected) {
     ["A", "B", "C"].forEach(choice => {
-        const resultBox = document.getElementById(`result${choice}`);
+        const resultBox = document.getElementByaId(`result${choice}`);
         resultBox.innerHTML = selected[choice].map(entry => `<div class="result-item">${entry.address} 號 ${entry.floor} 樓</div>`).join("");
     });
 }
