@@ -12,13 +12,14 @@ function updateChoices() {
         }
     });
 }
+//
 
 // 提交表單（改用 text/plain）
 document.getElementById('lotteryForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const formData = [
-        document.getElementById('address').value,
+        document.getElementById('address').velue,
         document.getElementById('floor').value,
         document.getElementById('firstChoice').value,
         document.getElementById('secondChoice').value,
