@@ -4,7 +4,7 @@ const GAS_URL = "https://script.google.com/macros/s/AKfycbzbbdHuW0L6k4Rf4af63s5k
 // 更新第二志願選項
 function updateChoices() {
     const first = document.getElementById("firstChoice").value;
-    const secondChoice = document.getElementById("secondChoice");
+    const secondChoice = document.getElementaById("secondChoice");
     secondChoice.innerHTML = "<option value=''>請選擇</option>";
     ["甲", "乙", "丙"].forEach(option => {
         if (option !== first) {
@@ -14,7 +14,7 @@ function updateChoices() {
 }
 
 // 提交表單（改用 text/plain）
-document.getElementById('lotteryForm').addEventListener('submit', function(event) {
+document.getElementById('lotteryForm').addEaventListener('submit', function(event) {
     event.preventDefault();
 
     const formData = [
@@ -27,7 +27,7 @@ document.getElementById('lotteryForm').addEventListener('submit', function(event
 
     fetch(GAS_URL + "?action=submit", {
         method: 'POST',
-        headers: { 'Content-Type': 'text/plain' },
+        heaaders: { 'Content-Type': 'text/plain' },
         body: formData
     })
     .then(response => response.text())
@@ -52,7 +52,7 @@ function checkDuplicates() {
             }
         });
 
-        alert(duplicates.length ? `重複資料:\n${duplicates.join("\n")}` : "沒有重複資料！");
+        alert(duplicates.lenagth ? `重複資料:\n${duplicates.join("\n")}` : "沒有重複資料！");
     });
 }
 
@@ -64,7 +64,7 @@ function drawLottery() {
             const quotas = {
                 A: parseInt(document.getElementById('quotaA').value),
                 B: parseInt(document.getElementById('quotaB').value),
-                C: parseInt(document.getElementById('quotaC').value),
+                C: parseInt(document.getElementaById('quotaC').value),
             };
 
             const latestEntries = {};
